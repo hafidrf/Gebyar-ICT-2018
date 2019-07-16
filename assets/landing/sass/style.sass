@@ -1,0 +1,300 @@
+body
+  overflow-x: hidden
+  width: 100vw
+.flex-wrap
+  display: flex
+
+section
+  padding: 60px 0
+  .section-title, .section-desc
+      text-align: center
+  .section-title
+    font-weight: 900
+  .section-desc
+    color: #555
+.bg-icon
+  background: url('/assets/Icon kecil.png') repeat
+  background-size: contain
+  position: relative
+  z-index: 3
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    background-color: transparentize(white,.3)
+  
+.navbar-panel
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  z-index: 999
+  transition: .3s
+  padding: 30px 0
+  &.scrolled 
+    background-color: transparentize(#000,.3)
+    padding: 15px 0
+  .container
+    @extend .flex-wrap
+    justify-content: flex-end
+    align-items: center
+    transition: .3s
+  .link-wrapper
+    padding: 0
+    margin: 0
+    @extend .flex-wrap
+    list-style: none
+    .link-item
+      list-style: none
+      margin: 0 20px
+      border-bottom: 2px solid transparent
+      transition: .3s
+      &:last-child
+        margin-right: 0
+      a
+        color: #ddd
+        text-decoration: none
+      &:hover
+        border-bottom: 2px solid white
+
+.hero
+  background: url('/assets/uin_bw.jpg') no-repeat
+  background-size: cover
+  position: relative
+  z-index: 2
+  &::after
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background-color: transparentize(#000,.4)
+  .row
+    min-height: 100vh
+    align-items: center
+    .hero-img
+      width: 100%
+    .title
+      font-size: 55px
+      color: white
+      font-weight: 900
+      margin-bottom: 0
+    .desc
+      letter-spacing: 10px
+      font-size: 25px
+      color: #ccc
+      font-weight: 100
+    .btn
+      padding: 10px 50px
+      border-radius: 20px
+      font-weight: 900
+      font-size: 15px
+
+.event
+  .single-event-wrapper
+    align-items: stretch
+  .single-event
+    position: relative
+    @extend .flex-wrap
+    flex-flow: column
+    .close-btn
+      position: absolute
+      background-color: transparentize(#aaa,.8)
+      @extend .flex-wrap
+      width: 40px
+      border-radius: 50%
+      height: 40px
+      align-items: center
+      justify-content: center
+      cursor: pointer
+      top: 10px
+      right: 15px
+      font-weight: 900
+      font-size: 20px
+    .img-container
+      height: 300px
+      padding: 0 20px
+      @extend .flex-wrap
+      align-items: center
+      justify-content: center
+      .single-img
+        width: 100%
+    .event-title
+      font-size: 28px
+      font-weight: 900
+    .event-schedule-container
+      flex: 1
+    .event-schedule
+      padding: 0
+      .title, .desc
+        margin-bottom: 0
+      .title
+        font-weight: 800
+      .row
+        align-items: center
+        .fa
+          font-size: 35px
+          margin: 15px 0
+    .action-wrapper
+      justify-content: center
+      .btn
+        padding: 5px 30px
+        &.btn-default
+          margin-right: 5px
+          background-color: #1F3A44
+          color: white
+
+.media-partner
+  background-color: #222222
+  .section-title
+    color: white
+  .media-partner-img
+    height: 40px          
+    margin: 0 5px
+
+.gallery
+  background: url('/assets/Icon kecil.png') repeat #181818
+  background-size: contain
+  .section-title
+    color: white
+  .section-desc
+    color: #eee
+  .gallery-img
+    height: 250px
+    width: 100%
+    object-fit: contain    
+    filter: grayscale(100%)
+    transition: 1s all
+    &:hover
+      filter: grayscale(0)
+
+.join
+  background: url('/assets/uin_malikiPEpmA.jpg') no-repeat center center
+  background-size: cover
+  position: relative
+  z-index: 4
+  .section-title
+    color: white
+  .section-desc
+    color: #eee
+  &::after
+    content: ''
+    z-index: -1
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background-color: transparentize(#000,.6)
+  .btn
+    padding: 10px 45px
+
+.footer
+  @extend .flex-wrap
+  justify-content: center
+  align-items: center
+  background-color: #333
+  .img-footer
+    height: 50px
+  > *
+    margin: 0 20px
+  .desc
+    margin-right: 40px
+    color: #eee
+
+.contact
+  background: url('/assets/Icon kecil.png') 
+  background-size: contain
+  .feedback
+    padding: 40px
+    background-color: white
+    .send
+      font-weight: 800
+      font-size: 20px
+      margin-bottom: 140px
+    .form-control:not(.btn)
+      height: 50px
+      &.textarea
+        height: 150px
+    .socmed-link .fa
+      font-size: 29px
+      color: #555
+      margin: 0 10px
+  .feedback, .gmaps
+    box-shadow: 0 2px 6px transparentize(#000,.7)
+  .gmaps
+    width: 100%
+    height: 100%
+
+.fade-enter
+  opacity: 0
+.fade-enter-active, .fade-leave
+  transition: .3s
+.fade-leave-active,.fade-leave-to
+  opacity: 0
+
+@media (max-width: 768px)
+  .navbar-panel
+    padding: 0
+    &.show
+      background-color: white
+    .container
+      display: block
+      transition: .3s
+      padding: 10px 15px
+      &.activated
+        background-color: white
+    .mini-nav
+      display: flex
+      font-size: 25px
+      color: #ddd
+      justify-content: flex-end
+    .link-wrapper
+      overflow: hidden
+      transition: .3s
+      display: block
+      .link-item 
+        display: block
+        transition: .3s
+        a
+          color: #333
+        &:hover
+          background-color: ghostwhite
+          padding: 10px
+      
+  .contact .gmaps
+    height: 300px
+    margin-top: 20px
+
+  .footer
+    width: 100vw 
+    .desc
+      width: 100%
+      text-align: center
+      margin-right: 0
+    > *
+      margin-bottom: 10px
+
+  .media-partner .media-partner-img
+    margin-bottom: 10px
+
+  .hero 
+    text-align: center
+    background-position: center center
+    .hero-img
+      margin-bottom: 20px
+    .row
+      align-content: center
+      .title
+        font-size: 40px
+        margin-bottom: 20px
+      .desc
+        letter-spacing: 0
+        font-weight: 100
+        font-size: 20px
